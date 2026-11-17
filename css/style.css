@@ -1,1 +1,114 @@
-/* Här skrivs all din CSS */
+:root {
+    --main-color:#F54727;
+    --second-color: #27F5E3;
+    --third-color: #27F557;
+}
+  
+#wrapper_index{
+    display: grid;
+    gap: 10px;
+    height: 100vh;
+
+    
+background-image: linear-gradient(to bottom, var(--second-color), var(--third-color));
+    grid-template-columns: 50% auto 25%;
+    grid-template-rows: 20% 70% 10%;
+
+    grid-template-areas: 
+    'hd hd hd'
+    'ma . as'
+    'ft ft ft';
+}
+
+h1{
+    display: flex;
+    font-size: 200%;
+    align-items: center;
+    background-color: aliceblue;
+    border: var(--second-color) 10px solid;
+    border-radius: 10px;
+}
+
+header{
+    grid-area: hd;
+    background-color: var(--main-color);
+
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.logo{
+    height: 80%;
+}
+
+nav{
+    background-color: #581a0f;
+    width: 40%;
+    height: 80%;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: space-around;
+    border: var(--second-color) 4px solid;
+    border-radius: 10px;
+}
+.nav_img{
+    display: flex;
+    width: 100%;
+}
+.nav_img:hover{
+    background-color: black;
+}
+
+main{
+    margin-left: 15%;
+    grid-area: ma;
+    background-color: var(--third-color);
+    display: grid;
+    grid-template-columns: repeat(2, 50%);
+    grid-template-rows: repeat(2, 50%);
+    gap: 5px;
+    grid-template-areas: 
+    'id1 ia'
+    'id2 ia';
+
+    border: white 10px solid;
+    border-radius: 20px;
+}
+
+#index_article{
+    grid-area: ia;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 90%;
+}
+#index_div1{
+    grid-area: id1;
+    background-color: white;
+}
+#buddy{
+    width: 100%;
+    height: 110%;
+    border-radius: 20px 0px 0px 0px;
+}
+#index_div2{
+    grid-area: id2;
+    background-color: white;
+}
+#samuel{
+    width: 100%;
+    height: 100%;
+    border-radius: 0px 0px 0px 20px;
+}
+
+aside{
+    grid-area: as;
+    background-color: blueviolet;
+}
+
+footer{
+    grid-area: ft;
+    background-color: yellow;
+}
