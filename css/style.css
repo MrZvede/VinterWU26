@@ -1,18 +1,22 @@
 :root {
     --main-color:#F54727;
+    --dark_main_color: #b33924;
     --second-color: #27F5E3;
     --third-color: #27F557;
+}
+
+body{
+    overflow: hidden;
 }
   
 #wrapper_index{
     display: grid;
     gap: 10px;
     height: 100vh;
-
     
-background-image: linear-gradient(to bottom, var(--second-color), var(--third-color));
-    grid-template-columns: 50% auto 25%;
-    grid-template-rows: 20% 70% 10%;
+    background-image: linear-gradient(to bottom, var(--third-color), var(--second-color));
+    grid-template-columns: 50% 1fr 25%;
+    grid-template-rows: 20% 70% 1fr;
 
     grid-template-areas: 
     'hd hd hd'
@@ -20,9 +24,11 @@ background-image: linear-gradient(to bottom, var(--second-color), var(--third-co
     'ft ft ft';
 }
 
+
+
 h1{
     display: flex;
-    font-size: 200%;
+    font-size: 400%;
     align-items: center;
     background-color: aliceblue;
     border: var(--second-color) 10px solid;
@@ -36,6 +42,8 @@ header{
     display: flex;
     align-items: center;
     justify-content: space-around;
+    border: #581a0f 10px solid;
+    border-radius: 30px;
 }
 
 .logo{
@@ -45,29 +53,27 @@ header{
 nav{
     background-color: #581a0f;
     width: 40%;
-    height: 80%;
+    height: 60%;
     display: flex;
     align-items: center;
-    flex-direction: row;
-    justify-content: space-around;
+    justify-content: space-evenly;
     border: var(--second-color) 4px solid;
     border-radius: 10px;
 }
 .nav_img{
-    display: flex;
-    width: 100%;
+    width: 300%;
 }
 .nav_img:hover{
-    background-color: black;
+    transform: scale(1.05);
+    transition: all 1s ease;
 }
 
-main{
-    margin-left: 15%;
+#index_main{
     grid-area: ma;
     background-color: var(--third-color);
     display: grid;
-    grid-template-columns: repeat(2, 50%);
-    grid-template-rows: repeat(2, 50%);
+    grid-template-columns: 50% 50%;
+    grid-template-rows: repeat(2, 1fr);
     gap: 5px;
     grid-template-areas: 
     'id1 ia'
@@ -75,6 +81,7 @@ main{
 
     border: white 10px solid;
     border-radius: 20px;
+    margin-left: 30%;
 }
 
 #index_article{
@@ -86,29 +93,84 @@ main{
 }
 #index_div1{
     grid-area: id1;
-    background-color: white;
-}
-#buddy{
     width: 100%;
-    height: 110%;
-    border-radius: 20px 0px 0px 0px;
+    border-radius: 10px 0px 0px 0px;
+    background-image: url(/img/Buddy_\(2026_film\)_poster.jpg);
+    background-size: cover;
+    background-size: 90%;
 }
 #index_div2{
     grid-area: id2;
-    background-color: white;
-}
-#samuel{
+    background-image: url(/img/I\ am\ samuel.jpg);
     width: 100%;
-    height: 100%;
-    border-radius: 0px 0px 0px 20px;
+    border-radius: 0px 0px 0px 10px;
+    background-size: cover;
+    background-position: 0px -90px;
 }
 
 aside{
     grid-area: as;
-    background-color: blueviolet;
+    background-color: rgba(255, 255, 255, 0.467);
+    border: #27F5E3 5px solid;
+    margin-right: 10%;
+    display: flex;
+    justify-content: flex-start;
+    text-align: center;
+    flex-direction: column;
+    
 }
+
+.aside_h3{
+    font-size: 25px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+.index_time_table{
+    font-size: 20px;
+    font-family: fantasy;
+}
+
 
 footer{
     grid-area: ft;
-    background-color: yellow;
+    background-color: var(--dark_main_color);
+}
+
+.index_foot{
+    font-size: 10px;
+}
+
+
+#wrapper_cards{
+    display: grid;
+    flex-direction: column;
+    height: 100vh;
+    
+    background-image: linear-gradient(to bottom, var(--main-color), var(--dark_main_color));
+    grid-template-rows: 20% 70% 1fr;
+    grid-template-areas: 
+    'hd'
+    'cards_ma'
+    'cards_ft';
+}
+
+#cards_main{
+    grid-area: cards_ma;
+    display: flex;
+    gap: 20px;
+    margin: 10px;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+#cards_footer{
+    grid-area: cards_ft;
+    background-color: #27F557;
+}
+
+.card{
+    background-color: black;
+    width: 150px;
+    height: 200px;
 }
